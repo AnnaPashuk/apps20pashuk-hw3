@@ -3,22 +3,23 @@ package ua.edu.ucu.smartarr;
 import ua.edu.ucu.functions.MyFunction;
 
 // Map every element to another object using MyFunction
-public class MapDecorator extends SmartArrayDecorator{
+public class MapDecorator extends SmartArrayDecorator {
 
 
     MyFunction myFunction;
+
     public MapDecorator(SmartArray smartArray, MyFunction myFunction) {
         super(smartArray);
         this.myFunction = myFunction;
     }
 
-    public Object[] itemsMap(){
+    public Object[] itemsMap() {
         int counter = 0;
         Object[] smart = smartArray.toArray();
-        Object[]  newArray = new Object[smart.length];
-        for (Object i : smart){
+        Object[] newArray = new Object[smart.length];
+        for (Object i : smart) {
             newArray[counter] = myFunction.apply(i);
-            counter ++;
+            counter++;
         }
         return newArray;
     }

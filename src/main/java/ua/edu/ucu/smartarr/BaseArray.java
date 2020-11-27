@@ -3,9 +3,10 @@ package ua.edu.ucu.smartarr;
 import java.util.Arrays;
 
 // Base array for decorators
-public class BaseArray implements SmartArray{
+public class BaseArray implements SmartArray {
     private Object[] newArray;
-    public BaseArray(Object[] newArray){
+
+    public BaseArray(Object[] newArray) {
         this.newArray = newArray;
     }
 

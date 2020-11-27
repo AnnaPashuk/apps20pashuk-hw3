@@ -7,14 +7,15 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 // Sorts elements using MyComparator to compare them
-public class SortDecorator extends SmartArrayDecorator{
+public class SortDecorator extends SmartArrayDecorator {
     private MyComparator myComparator;
+
     public SortDecorator(SmartArray smartArray, MyComparator myComparator) {
         super(smartArray);
         this.myComparator = myComparator;
     }
 
-    private Object[] itemsSort(){
+    private Object[] itemsSort() {
         Object[] smart = smartArray.toArray();
         Arrays.sort(smart, myComparator);
         return smart;
